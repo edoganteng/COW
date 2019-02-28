@@ -1,0 +1,26 @@
+# /etc/conf.d/cowryd: config file for /etc/init.d/cowryd
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/cowry/cowry.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/cowryd"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/cowryd.pid"
+
+# Where to write cowryd data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/cowryd"
+
+# User and group to own cowryd process
+#BITCOIND_USER="cowry"
+#BITCOIND_GROUP="cowry"
+
+# Path to cowryd executable
+#BITCOIND_BIN="/usr/bin/cowryd"
+
+# Nice value to run cowryd under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

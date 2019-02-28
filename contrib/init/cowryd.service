@@ -1,0 +1,26 @@
+[Unit]
+Description=Cowry's distributed currency daemon
+After=network.target
+
+[Service]
+User=cowry
+Group=cowry
+
+Type=forking
+PIDFile=/var/lib/cowryd/cowryd.pid
+
+ExecStart=/usr/bin/cowryd -daemon -pid=/var/lib/cowryd/cowryd.pid \
+          -conf=/etc/cowry/cowry.conf -datadir=/var/lib/cowryd
+
+ExecStop=-/usr/bin/cowry-cli -conf=/etc/cowry/cowry.conf \
+         -datadir=/var/lib/cowryd stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

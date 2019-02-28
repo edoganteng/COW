@@ -1,0 +1,36 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/cowry_bg.qm</file>
+        <file alias="ca">locale/cowry_ca.qm</file>
+        <file alias="cs">locale/cowry_cs.qm</file>
+        <file alias="da">locale/cowry_da.qm</file>
+        <file alias="de">locale/cowry_de.qm</file>
+        <file alias="en">locale/cowry_en.qm</file>
+        <file alias="en_US">locale/cowry_en_US.qm</file>
+        <file alias="eo">locale/cowry_eo.qm</file>
+        <file alias="es">locale/cowry_es.qm</file>
+        <file alias="es_ES">locale/cowry_es_ES.qm</file>
+        <file alias="fi">locale/cowry_fi.qm</file>
+        <file alias="fr_FR">locale/cowry_fr_FR.qm</file>
+        <file alias="hi_IN">locale/cowry_hi_IN.qm</file>
+        <file alias="hr">locale/cowry_hr.qm</file>
+        <file alias="hr_HR">locale/cowry_hr_HR.qm</file>
+        <file alias="it">locale/cowry_it.qm</file>
+        <file alias="ja">locale/cowry_ja.qm</file>
+        <file alias="ko_KR">locale/cowry_ko_KR.qm</file>
+        <file alias="lt_LT">locale/cowry_lt_LT.qm</file>
+        <file alias="nl">locale/cowry_nl.qm</file>
+        <file alias="pl">locale/cowry_pl.qm</file>
+        <file alias="pt">locale/cowry_pt.qm</file>
+        <file alias="pt_BR">locale/cowry_pt_BR.qm</file>
+        <file alias="ro_RO">locale/cowry_ro_RO.qm</file>
+        <file alias="ru">locale/cowry_ru.qm</file>
+        <file alias="sk">locale/cowry_sk.qm</file>
+        <file alias="sv">locale/cowry_sv.qm</file>
+        <file alias="tr">locale/cowry_tr.qm</file>
+        <file alias="uk">locale/cowry_uk.qm</file>
+        <file alias="vi">locale/cowry_vi.qm</file>
+        <file alias="zh_CN">locale/cowry_zh_CN.qm</file>
+        <file alias="zh_TW">locale/cowry_zh_TW.qm</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Cowry
+Comment=Cowry P2P Cryptocurrency
+Comment[fr]=Cowry, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Cowry, eşten eşe kriptografik sanal para birimi
+Exec=cowry-qt %u
+Terminal=false
+Type=Application
+Icon=cowry128
+MimeType=x-scheme-handler/cowry;
+Categories=Office;Finance;
