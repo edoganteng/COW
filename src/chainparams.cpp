@@ -113,7 +113,7 @@ public:
         pchMessageStart[2] = 0x6b;
         pchMessageStart[3] = 0x36;
         vAlertPubKey = ParseHex("047fdd979c9aed93152651eddffcb523ac15eb7814290d4f2f0cc60cf49b3c04d40c93e38d88ab33f2804fae6ab0ec2f0462ca4d1a9b1412db57a0b9f87453443f");
-        nDefaultPort = 7700;
+        nDefaultPort = 6626;
         bnProofOfWorkLimit = ~uint256(0) >> 20; // Cowry starting difficulty is 1 / 2^12
         nSubsidyHalvingInterval = 2100000;
         nMaxReorganizationDepth = 100;
