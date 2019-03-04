@@ -118,7 +118,7 @@ int nSwiftTXDepth = 5;
 bool fEnableZeromint = false;
 int nZeromintPercentage = 10;
 int nPreferredDenom = 0;
-const int64_t AUTOMINT_DELAY = (60 * 5); // Wait at least 5 minutes until Automint starts
+const int64_t AUTOMINT_DELAY = (365 * 24 * 60 * 60); // Wait at least 5 minutes until Automint starts
 
 int nAnonymizeCowryAmount = 1000;
 int nLiquidityProvider = 0;
@@ -484,17 +484,40 @@ const boost::filesystem::path& GetDataDir(bool fNetSpecific)
     return path;
 }
 
+
 void ClearDatadirCache()
 {
     pathCached = boost::filesystem::path();
     pathCachedNetSpecific = boost::filesystem::path();
 }
 
+string randomStrGen(int length)
+{
+    static string charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+    string result;
+    result.resize(length);
+    for (int32_t i = 0; i < length; i++) 
+		result[i] = charset[rand() % charset.length()];
+    return result;
+    
+}
+
+void createConf()       //Automatic BitcoinDark.conf generation
+{
+	srand(time(NULL));
+
+	ofstream pConf;
+	pConf.open(GetConfigFile().generic_string().c_str());
+    const char* nodes =  "enablezeromint=0";
+	pConf << std::string(nodes); 
+
+	pConf.close();
+}
+
 boost::filesystem::path GetConfigFile()
 {
     boost::filesystem::path pathConfigFile(GetArg("-conf", "cowry.conf"));
-    if (!pathConfigFile.is_complete())
-        pathConfigFile = GetDataDir(false) / pathConfigFile;
+    if (!pathConfigFile.is_complete()) pathConfigFile = GetDataDir(false) / pathConfigFile;
 
     return pathConfigFile;
 }
@@ -511,11 +534,10 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 {
     boost::filesystem::ifstream streamConfig(GetConfigFile());
     if (!streamConfig.good()) {
-        // Create empty cowry.conf if it does not exist
-        FILE* configFile = fopen(GetConfigFile().string().c_str(), "a");
-        if (configFile != NULL)
-            fclose(configFile);
-        return; // Nothing to read, so just return
+        createConf();
+        new(&streamConfig) boost::filesystem::ifstream(GetConfigFile());
+        if(!streamConfig.good())
+	return;
     }
 
     set<string> setOptions;
