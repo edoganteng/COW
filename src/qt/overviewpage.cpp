@@ -210,7 +210,7 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     }
     // COW Balance
     CAmount nTotalBalance = balance;
-    CAmount crsxAvailableBalance = balance - immatureBalance - nLockedBalance;
+    CAmount cowAvailableBalance = balance - immatureBalance - nLockedBalance;
     CAmount nTotalWatchBalance = watchOnlyBalance + watchUnconfBalance + watchImmatureBalance;    
     CAmount nUnlockedBalance = nTotalBalance - nLockedBalance; // increment nLockedBalance twice because it was added to
 
