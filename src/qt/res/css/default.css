@@ -224,7 +224,7 @@ background-color:#f2f2f2;
 /***************************** Global Qt Objects ***********************************************************/
 
 QPushButton { /* Global Button Style */
-background-color: #2D51A3; 
+background-color: #2D51A3;
 border-width: 1px;
 border-style: outset;
 border-color: #2D51A3;
@@ -909,18 +909,21 @@ border:1px solid #2D51A3;
 QLabel#labelOverviewHeaderLeft {
 font-weight:bold;
 font-size:20px;
-background-color:#ffffff;
+min-width:400px;
+background-color:transparent;
 }
 
 QLabel#labelOverviewHeaderRight {
-qproperty-alignment: 'AlignVCenter | AlignRight';
+qproperty-alignment: 'AlignVRight | AlignRight';
 background-image: url(':/images/cowry_logo_horizontal');
 background-repeat: no-repeat;
 }
 
+
+
 QWidget .QFrame#frame_Header { /* Header with Page-Title and Cowry-image */
 min-width:400px;
-background-color:#ffffff;
+background-color:transparent;
 }
 
 QWidget .QFrame#frame_BG { /* Background */
@@ -1269,6 +1272,9 @@ min-width:410px;
 min-height:100px;
 margin-left:0;
 margin-top:0;
+
+
+background-color:transparent;
 }
 
 QWidget .QFrame#frame_RecentTransactions .QLabel#label_4 { /* Recent Transactions Label */
@@ -1302,7 +1308,7 @@ background-color:#fff;
 }
 
 QDialog#SendCoinsDialog .QFrame#frameCoinControl { /* Coin Control Section */
-background-color:#ffffff;
+background-color:#fff;
 }
 
 QDialog#SendCoinsDialog .QFrame#frameFee { /* Coin Control Section */
@@ -1346,7 +1352,7 @@ QDialog#SendCoinsDialog .QFrame#frameCoinControl .QWidget#widgetCoinControl > .Q
 padding:2px;
 }
 
-/* QDialog#SendCoinsDialog .QFrame#frameCoinControl .QCheckBox#checkBoxCoinControlChange { /* Custom Change Label */ 
+/* QDialog#SendCoinsDialog .QFrame#frameCoinControl .QCheckBox#checkBoxCoinControlChange { /* Custom Change Label */
 /* QDialog#SendCoinsDialog .QFrame#frameCoinControl .QValidatedLineEdit#lineEditCoinControlChange { /* Custom Change Address */
 /* QDialog#SendCoinsDialog .QFrame#frameCoinControl .QValidatedLineEdit#lineEditCoinControlChange:!focus { /* Custom Change Address */
 /* QDialog#SendCoinsDialog .QFrame#frameCoinControl .QLineEdit#splitBlockLineEdit { */
@@ -1636,7 +1642,7 @@ QLabel#transactionSumLabel { /* Example of setObjectName for widgets without nam
 color:#333333;
 font-weight:bold;
 }
- 
+
 QLabel#transactionSum { /* Example of setObjectName for widgets without name */
 color:#333333;
 }

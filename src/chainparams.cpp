@@ -54,13 +54,20 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
     (0, uint256("00000d6fe4cb22e1f03e80b1ed0fa293804f029901aa6a8f2549f93e42c4b99b"))
-    (10, uint256("000007724ed5168b809c9d1c376e6df22e8e283f5f9500dfd0829659a342a3c1"));
+    (10, uint256("000007724ed5168b809c9d1c376e6df22e8e283f5f9500dfd0829659a342a3c1"))
+    (1000, uint256("000000661502ed59d59c8a967259e79a45630c14c37de6f76d921a27e14a9167"))
+    (5000, uint256("0b0cac1fcd6c31286768dcaafe6b490b82404c93d2f3d85781d9dace20341cf5"))
+    (10000, uint256("7ad66b59eb1e54f0213273683e55e17538412c992b3a686329662a087e7da66e"))
+    (20000, uint256("8ee3ba28e01042dcbb6f14d27256fa1b226d7129c9c54bbc84f4bed2a9354891"))
+    (40000, uint256("5f4b8e4e482529f7f5d9ab394ad36c4aea71bbf0b50ae96dc152c7fdf1ec7387"))
+    (80000, uint256("0e70c515aaf03a1fc6eb08f5e09cfc9cc39da526dcfd98e92316c3c70ca0ab4d"))
+    ;
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
     1551107115, // * UNIX timestamp of last checkpoint block
     0,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
-    0        // * estimated number of transactions per day after checkpoint
+    2000        // * estimated number of transactions per day after checkpoint
 };
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
@@ -140,8 +147,8 @@ public:
         nBlockEnforceInvalidUTXO = 999999999; //Start enforcing the invalid UTXO's
         nInvalidAmountFiltered = 0*COIN; //Amount of invalid coins filtered through exchanges, that should be considered valid
         nBlockZerocoinV2 = 999999999;
-        nEnforceNewSporkKey = 1525158000; //!> Sporks signed after (GMT): Tuesday, May 1, 2018 7:00:00 AM GMT must use the new spork key
-        nRejectOldSporkKey = 1527811200; //!> Fully reject old spork key after (GMT): Friday, June 1, 2018 12:00:00 AM
+        nEnforceNewSporkKey = 1557899172; //!> Sporks signed after (GMT): Tuesday, May 1, 2018 7:00:00 AM GMT must use the new spork key
+        nRejectOldSporkKey = 1557899172; //!> Fully reject old spork key after (GMT): Friday, June 1, 2018 12:00:00 AM
 
         /**
          * Build the genesis block. Note that the output of the genesis coinbase cannot
@@ -173,8 +180,8 @@ public:
         assert(hashGenesisBlock == uint256("0x00000d6fe4cb22e1f03e80b1ed0fa293804f029901aa6a8f2549f93e42c4b99b"));
         assert(genesis.hashMerkleRoot == uint256("0xbcf1d77e358c324da6a019944c00343ba6b3d474b57107c3d4604ca0c5eada6b"));
 
-        vSeeds.push_back(CDNSSeedData("seed1", "35.206.136.72"));
-        vSeeds.push_back(CDNSSeedData("seed2", "77.55.193.205"));
+        vSeeds.push_back(CDNSSeedData("seed1", "108.61.174.184"));
+        vSeeds.push_back(CDNSSeedData("seed2", "45.63.115.253"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 28);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 29);
@@ -196,7 +203,7 @@ public:
         fHeadersFirstSyncingActive = false;
 
         nPoolMaxTransactions = 3;
-        strSporkKey = "043acf36a8a07fd1746292d232b9ece41429faad530c6de48b7eeaccd3594ed0d891a33dd4562364a394714b8265796e1ef30a808a29632e3b76d5d56cd715ff69";
+        strSporkKey = "0449F4AAC2843CE1F241A06EA615B408A98011FF630F51BCF8253AC85CFA1FC28C01DAA026F1810C1C7A074CCC0396CC4E58CF8F98869C0BB244CB6D839428899A";
         strSporkKeyOld = "04B433E6598390C992F4F022F20D3B4CBBE691652EE7C48243B81701CBDB7CC7D7BF0EE09E154E6FCBF2043D65AF4E9E97B89B5DBAF830D83B9B7F469A6C45A717";
         strObfuscationPoolDummyAddress = "CL5HnzK7p3kD8egS1K7SzWPWEtsh5QQ9Jr";
         nStartMasternodePayments = 1403728576; //Wed, 25 Jun 2014 20:36:16 GMT

@@ -5,16 +5,16 @@ SetCompressor /SOLID lzma
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION 1.0.0
+!define VERSION 2.0.0
 !define COMPANY "Cowry Core project"
 !define URL https://www.cowry.org
 
 # MUI Symbol Definitions
-!define MUI_ICON "/tmp/Cowry/share/pixmaps/bitcoin.ico"
-!define MUI_WELCOMEFINISHPAGE_BITMAP "/tmp/Cowry/share/pixmaps/nsis-wizard.bmp"
+!define MUI_ICON "/Users/vishalsachdeva/Downloads/cowry-master/share/pixmaps/bitcoin.ico"
+!define MUI_WELCOMEFINISHPAGE_BITMAP "/Users/vishalsachdeva/Downloads/cowry-master/share/pixmaps/nsis-wizard.bmp"
 !define MUI_HEADERIMAGE
 !define MUI_HEADERIMAGE_RIGHT
-!define MUI_HEADERIMAGE_BITMAP "/tmp/Cowry/share/pixmaps/nsis-header.bmp"
+!define MUI_HEADERIMAGE_BITMAP "/Users/vishalsachdeva/Downloads/cowry-master/share/pixmaps/nsis-header.bmp"
 !define MUI_FINISHPAGE_NOAUTOCLOSE
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT HKLM
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
@@ -22,7 +22,7 @@ SetCompressor /SOLID lzma
 !define MUI_STARTMENUPAGE_DEFAULTFOLDER "Cowry Core"
 !define MUI_FINISHPAGE_RUN $INSTDIR\cowry-qt
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
-!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/tmp/Cowry/share/pixmaps/nsis-wizard.bmp"
+!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/Users/vishalsachdeva/Downloads/cowry-master/share/pixmaps/nsis-wizard.bmp"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
 
 # Included files
@@ -48,7 +48,7 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile /tmp/Cowry/cowry-${VERSION}-win-setup.exe
+OutFile /Users/vishalsachdeva/Downloads/cowry-master/cowry-${VERSION}-win-setup.exe
 !if "" == "64"
 InstallDir $PROGRAMFILES64\Cowry
 !else
@@ -73,14 +73,14 @@ ShowUninstDetails show
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-    File /tmp/Cowry/release/cowry-qt
-    File /oname=COPYING.txt /tmp/Cowry/COPYING
-    File /oname=readme.txt /tmp/Cowry/doc/README_windows.txt
+    File /Users/vishalsachdeva/Downloads/cowry-master/release/cowry-qt
+    File /oname=COPYING.txt /Users/vishalsachdeva/Downloads/cowry-master/COPYING
+    File /oname=readme.txt /Users/vishalsachdeva/Downloads/cowry-master/doc/README_windows.txt
     SetOutPath $INSTDIR\daemon
-    File /tmp/Cowry/release/cowryd
-    File /tmp/Cowry/release/cowry-cli
+    File /Users/vishalsachdeva/Downloads/cowry-master/release/cowryd
+    File /Users/vishalsachdeva/Downloads/cowry-master/release/cowry-cli
     SetOutPath $INSTDIR\doc
-    File /r /tmp/Cowry/doc\*.*
+    File /r /Users/vishalsachdeva/Downloads/cowry-master/doc\*.*
     SetOutPath $INSTDIR
     WriteRegStr HKCU "${REGKEY}\Components" Main 1
 SectionEnd
